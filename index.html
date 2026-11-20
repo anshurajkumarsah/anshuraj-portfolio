@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anshuraj Sah — Creative Producer & AI Strategist</title>
+  <meta name="description" content="Portfolio of Anshuraj Sah — Creative Intern, AI-native producer, motion designer, and founder of Titanix Media. Inspired by melon.studio.">
+  
+  <!-- Taskbar & Browser Tab Favicon (Melon.Studio Monogram) -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="alternate icon" href="favicon.svg">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0a0303">
+  <meta name="msapplication-TileColor" content="#0a0303">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Custom Styles with Melon.Studio Palette -->
+  <link rel="stylesheet" href="style.css">
+  
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            melon: {
+              red: '#ff3b3b',
+              coral: '#e5524a',
+              pink: '#ffb3b3',
+              dark: '#0a0303',
+              card: '#120505'
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#0a0303] text-[#f6efed] font-sans antialiased selection:bg-[#ff3b3b] selection:text-white min-h-screen relative overflow-x-hidden">
+
+  <!-- Custom Cursor Elements -->
+  <div id="cursor-dot" class="cursor-dot"></div>
+  <div id="cursor-ring" class="cursor-ring"></div>
+
+  <!-- Ambient Animated Background Canvas -->
+  <canvas id="ambient-canvas" class="fixed inset-0 pointer-events-none z-0 opacity-40"></canvas>
+  <div class="glow-gradient-1"></div>
+  <div class="glow-gradient-2"></div>
+
+  <!-- Fixed Top Status & Navigation Bar (melon.studio exact style) -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-[#0a0303]/85 backdrop-blur-xl border-b border-[#f6efed]/[0.08] transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      
+      <!-- Brand & Status -->
+      <div class="flex items-center gap-4">
+        <a href="#hero" class="group flex items-center gap-2.5 text-sm font-bold tracking-tight">
+          <span class="w-2.5 h-2.5 rounded-full bg-[#ff3b3b] animate-ping"></span>
+          <span class="font-display text-[#f6efed] group-hover:text-[#ff3b3b] transition-colors">ANSHURAJ SAH</span>
+          <span class="font-mono text-[11px] text-zinc-500 hidden sm:inline-block">// CREATIVE PRODUCER</span>
+        </a>
+
+        <div class="hidden lg:flex items-center gap-2 pl-4 border-l border-[#f6efed]/10 text-xs text-zinc-400 font-mono">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#ff3b3b]"></span>
+          <span class="text-zinc-300">STATUS:</span>
+          <span class="text-[#ffb3b3]">AVAILABLE FOR ROLES & FREELANCE</span>
+        </div>
+      </div>
+
+      <!-- Navigation & Audio Switch -->
+      <nav class="hidden md:flex items-center gap-6 text-xs font-mono tracking-wider text-zinc-400">
+        <a href="#about" class="hover:text-[#ff3b3b] transition-colors">[01] PROFILE</a>
+        <a href="#manifesto" class="hover:text-[#ff3b3b] transition-colors">[02] PHILOSOPHY</a>
+        <a href="#lab" class="hover:text-[#ff3b3b] transition-colors">[03] SPEC LAB</a>
+        <a href="#origin-story" class="hover:text-[#ff3b3b] transition-colors">[04] ORIGIN STORY</a>
+        <a href="#brief-builder" class="hover:text-[#ff3b3b] transition-colors">[05] BRIEF BUILDER</a>
+        <a href="resume.html" class="text-[#ff3b3b] hover:underline font-bold transition-colors">[RESUME ↗]</a>
+      </nav>
+
+      <!-- Right Controls: IST Clock + SFX Switch + Connect CTA -->
+      <div class="flex items-center gap-3">
+        <!-- IST Clock -->
+        <div class="hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-white/[0.03] border border-white/[0.08] text-[11px] font-mono text-zinc-300">
+          <i data-lucide="clock" class="w-3 h-3 text-[#ff3b3b]"></i>
+          <span id="ist-clock">--:--:-- IST</span>
+        </div>
+
+        <!-- Audio SFX Toggle Button -->
+        <button id="sound-toggle" title="Toggle Melon Audio SFX" class="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.08] text-[11px] font-mono text-zinc-300 transition-all">
+          <div class="flex items-center gap-0.5 h-3">
+            <span class="audio-bar"></span>
+            <span class="audio-bar"></span>
+            <span class="audio-bar"></span>
+            <span class="audio-bar"></span>
+          </div>
+          <span id="sound-status" class="hidden sm:inline">SFX: ON</span>
+        </button>
+
+        <!-- Direct Connect Button -->
+        <a href="#brief-builder" class="btn-melon-primary text-xs px-3.5 py-1.5 font-bold">
+          <span>CONNECT</span>
+          <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="relative z-10 pt-24 pb-20">
+
+    <!-- ==================== HERO SECTION WITH PROFILE PICTURE ==================== -->
+    <section id="hero" class="min-h-[85vh] flex flex-col justify-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      
+      <!-- Top Meta Tags -->
+      <div class="flex flex-wrap items-center gap-3 mb-6">
+        <span class="badge-melon">
+          <i data-lucide="sparkles" class="w-3 h-3 text-[#ff3b3b]"></i>
+          AI-NATIVE PRODUCER
+        </span>
+        <span class="badge-melon bg-[#ff3b3b]/10 text-[#f6efed] border-[#ff3b3b]/40">
+          <i data-lucide="zap" class="w-3 h-3 text-[#ff3b3b]"></i>
+          FOUNDER @ TITANIX MEDIA
+        </span>
+        <span class="text-xs font-mono text-zinc-400">
+          DELHI, IN // 28.6139° N, 77.2090° E
+        </span>
+      </div>
+
+      <!-- Main Headline in Melon.Studio Typography -->
+      <h1 class="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight text-[#f6efed] leading-[1.05] max-w-5xl mb-10">
+        CRAFTING <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#ff3b3b] via-[#ffb3b3] to-[#f6efed]">HIGH-RETENTION</span> STORIES AT THE EDGE OF AI & MOTION.
+      </h1>
+
+      <!-- Hero Grid: Bio on Left + High-End Portrait Card on Right -->
+      <div id="about" class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-12">
+        
+        <!-- Left: Bio & Details -->
+        <div class="lg:col-span-7">
+          <p class="text-lg sm:text-xl text-[#f6efed]/90 leading-relaxed font-normal">
+            Creative strategist, AI-native producer, and digital media coordinator with hands-on experience in project production, kinetic motion design, and internet trend storytelling.
+          </p>
+          <p class="text-sm text-zinc-400 mt-4 leading-relaxed font-mono">
+            Skilled at synthesizing deep internet research into 3-second viral hooks, engineering fast-paced explainer reels, and coordinating multi-platform workflows ready to support creator studios (e.g. Sarthak Goswami).
+          </p>
+
+          <!-- Telemetry Badges -->
+          <div class="grid grid-cols-3 gap-3 my-6">
+            <div class="melon-card p-3.5 border-l-2 border-l-[#ff3b3b]">
+              <div class="font-mono text-[10px] text-zinc-500">// RETENTION</div>
+              <div class="font-display text-xl font-bold text-[#ff3b3b]">3.0s</div>
+              <div class="text-[10px] text-zinc-400">Hook safeguard</div>
+            </div>
+            <div class="melon-card p-3.5 border-l-2 border-l-[#ffb3b3]">
+              <div class="font-mono text-[10px] text-zinc-500">// VELOCITY</div>
+              <div class="font-display text-xl font-bold text-white">10x</div>
+              <div class="text-[10px] text-zinc-400">AI-native tools</div>
+            </div>
+            <div class="melon-card p-3.5 border-l-2 border-l-[#ff3b3b]">
+              <div class="font-mono text-[10px] text-zinc-500">// CADENCE</div>
+              <div class="font-display text-xl font-bold text-white">1.2s</div>
+              <div class="text-[10px] text-zinc-400">Visual pacing</div>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-wrap items-center gap-4 mt-6">
+            <a href="resume.html" class="btn-melon-primary">
+              <i data-lucide="file-text" class="w-4 h-4"></i>
+              <span>VIEW RESUME</span>
+            </a>
+            <a href="#lab" class="btn-melon-secondary">
+              <i data-lucide="play" class="w-4 h-4 fill-current"></i>
+              <span>EXPLORE SPEC LAB</span>
+            </a>
+            <button id="copy-email-btn" class="btn-melon-secondary text-xs">
+              <i data-lucide="copy" class="w-3.5 h-3.5 text-[#ff3b3b]"></i>
+              <span>COPY EMAIL</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Right: PROFILE PICTURE IDENTITY CARD (Featuring User's Photo) -->
+        <div class="lg:col-span-5">
+          <div class="melon-card p-5 border-t-2 border-t-[#ff3b3b] shadow-2xl relative">
+            
+            <div class="flex items-center justify-between border-b border-[#f6efed]/10 pb-3 mb-4">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-[#ff3b3b] animate-pulse"></span>
+                <span class="font-mono text-xs font-bold text-[#f6efed]">IDENTITY // PRODUCER</span>
+              </div>
+              
+              <!-- Quick Photo Angle Switcher -->
+              <div class="flex items-center gap-1">
+                <button class="hero-photo-switch active-hero-photo px-2 py-0.5 rounded text-[10px] font-mono bg-[#ff3b3b] text-white" data-src="assets/profile.jpg">CREATOR</button>
+                <button class="hero-photo-switch px-2 py-0.5 rounded text-[10px] font-mono bg-[#1c0808] text-zinc-400 hover:text-white" data-src="assets/academic.jpg">ID</button>
+                <button class="hero-photo-switch px-2 py-0.5 rounded text-[10px] font-mono bg-[#1c0808] text-zinc-400 hover:text-white" data-src="assets/origin.jpg">ORIGIN</button>
+              </div>
+            </div>
+
+            <!-- Profile Photo Frame -->
+            <div class="profile-photo-container aspect-[4/5] w-full mb-4 relative group">
+              <img id="profile-photo-img" 
+                   src="assets/profile.jpg" 
+                   alt="Anshuraj Sah — Creative Producer" 
+                   class="profile-photo-img object-cover object-center w-full h-full">
+              
+              <!-- Ambient Ember Gradient Overlay -->
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0a0303] via-transparent to-transparent opacity-85 pointer-events-none"></div>
+
+              <!-- Floating Status Pill on Photo -->
+              <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-[11px] font-mono text-[#f6efed] bg-[#0a0303]/85 backdrop-blur-md px-3 py-2 rounded-xl border border-white/10 shadow-lg">
+                <div class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-[#ff3b3b]"></span>
+                  <span class="font-bold">Anshuraj Sah</span>
+                </div>
+                <span class="text-[#ffb3b3]">Creative Intern & Producer</span>
+              </div>
+            </div>
+
+            <!-- Narrative Text Around the Photo -->
+            <div class="space-y-2 pt-1 font-mono text-[11px] border-t border-white/10 mt-3 pt-3">
+              <div class="flex items-center justify-between text-zinc-400">
+                <span>// LOCATION:</span>
+                <span class="text-white">Uttam Nagar, West Delhi</span>
+              </div>
+              <div class="flex items-center justify-between text-zinc-400">
+                <span>// SPECIALTY:</span>
+                <span class="text-[#ffb3b3]">AI Scripting • Kinetic Motion</span>
+              </div>
+              <div class="text-zinc-400 text-[10px] leading-relaxed pt-1 italic font-sans">
+                "Obsessed with internet culture, high-cadence motion design, and algorithmic pacing. Always behind the lens or orchestrating the edit."
+              </div>
+            </div>
+
+            <!-- Custom Photo Uploader Action -->
+            <div class="flex items-center justify-between pt-3 border-t border-white/10 mt-2">
+              <span class="text-[10px] font-mono text-zinc-500">CUSTOMIZE PORTRAIT:</span>
+              <button id="change-photo-btn" title="Click to upload your own picture" class="text-[10px] font-mono text-[#ff3b3b] hover:text-white px-2.5 py-1 rounded-md border border-[#ff3b3b]/30 hover:border-[#ff3b3b] bg-[#ff3b3b]/10 transition-all flex items-center gap-1 cursor-pointer">
+                <i data-lucide="camera" class="w-3 h-3"></i>
+                <span>UPLOAD PHOTO</span>
+              </button>
+              <input type="file" id="photo-upload-input" accept="image/*" class="hidden">
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ==================== MARQUEE RIBBON ==================== -->
+    <div class="w-full bg-[#120505] border-y border-[#f6efed]/[0.08] py-3.5 overflow-hidden my-6 select-none">
+      <div class="marquee-track flex gap-8 items-center text-xs font-mono tracking-widest text-[#f6efed]/60 uppercase">
+        <span class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-[#ff3b3b]"></span> AI WORKFLOW AUTOMATION</span>
+        <span class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-white"></span> KINETIC TYPOGRAPHY</span>
+        <span class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-[#ff3b3b]"></span> VIRAL HOOK SCRIPTING</span>
+        <span class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-[#ffb3b3]"></span> TITANIX MEDIA PRODUCTION</span>
+        <span class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-[#ff3b3b]"></span> 3S RETENTION PACING</span>
+        <span class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-white"></span> SOUND ARCHITECTURE</span>
+        <span class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-[#ff3b3b]"></span> EXPLAINER SUITE</span>
+        <span class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-[#45e0ea]"></span> TREND RESEARCH</span>
+        <span class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-[#ff3b3b]"></span> AI WORKFLOW AUTOMATION</span>
+        <span class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-white"></span> KINETIC TYPOGRAPHY</span>
+        <span class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-[#ff3b3b]"></span> VIRAL HOOK SCRIPTING</span>
+        <span class="flex items-center gap-3"><span class="w-2 h-2 rounded-full bg-[#ffb3b3]"></span> TITANIX MEDIA PRODUCTION</span>
+      </div>
+    </div>
+
+    <!-- ==================== SECTION 01: CREATIVE PHILOSOPHY / MANIFESTO ==================== -->
+    <section id="manifesto" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-b border-[#f6efed]/[0.08]">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-5">
+          <div class="font-mono text-xs text-[#ff3b3b] tracking-widest mb-3">// 01 • CREATIVE PHILOSOPHY</div>
+          <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-[#f6efed] tracking-tight leading-tight">
+            NO PASSIVE AUDIENCES.<br>
+            NO WASTED SECONDS.
+          </h2>
+          <p class="text-zinc-400 text-sm mt-5 leading-relaxed">
+            In modern vertical video and long-form YouTube, content doesn't compete with other videos—it competes with the user's thumb hovering over the screen.
+          </p>
+          <p class="text-zinc-400 text-sm mt-3 leading-relaxed">
+            As an AI-native producer, I don't treat editing as mere stitching of clips. It is a psychological pipeline engineered around four core tenets:
+          </p>
+
+          <div class="mt-6 p-4 rounded-xl bg-[#120505] border border-white/[0.08]">
+            <div class="flex items-center gap-3 text-xs font-mono text-[#f6efed]">
+              <i data-lucide="terminal" class="w-4 h-4 text-[#ff3b3b]"></i>
+              <span>PRODUCER MINDSET:</span>
+            </div>
+            <div class="text-xs text-zinc-400 mt-2 italic font-serif">
+              "When you lack commercial project archives, you don't make excuses—you prove your mastery of the underlying retention architecture."
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          
+          <div class="melon-card p-6 border-l-2 border-l-[#ff3b3b]">
+            <div class="w-8 h-8 rounded-lg bg-[#ff3b3b]/10 flex items-center justify-center text-[#ff3b3b] mb-4 font-mono font-bold text-sm">
+              01
+            </div>
+            <h3 class="font-display text-lg font-bold text-[#f6efed]">The 3-Second Rule</h3>
+            <p class="text-zinc-400 text-xs mt-2 leading-relaxed">
+              Every video opens with a sensory contract: a pattern interrupt, a provocative statement, or a visual paradox that earns the next 15 seconds.
+            </p>
+          </div>
+
+          <div class="melon-card p-6 border-l-2 border-l-[#ffb3b3]">
+            <div class="w-8 h-8 rounded-lg bg-[#ffb3b3]/10 flex items-center justify-center text-[#ffb3b3] mb-4 font-mono font-bold text-sm">
+              02
+            </div>
+            <h3 class="font-display text-lg font-bold text-[#f6efed]">Kinetic Pacing</h3>
+            <p class="text-zinc-400 text-xs mt-2 leading-relaxed">
+              Eye-movement choreography. Never leave the eye resting on a static frame for more than 1.2s. Dynamic zoom-ins, callout badges, and tracked text.
+            </p>
+          </div>
+
+          <div class="melon-card p-6 border-l-2 border-l-[#45e0ea]">
+            <div class="w-8 h-8 rounded-lg bg-[#45e0ea]/10 flex items-center justify-center text-[#45e0ea] mb-4 font-mono font-bold text-sm">
+              03
+            </div>
+            <h3 class="font-display text-lg font-bold text-[#f6efed]">AI Research Synthesis</h3>
+            <p class="text-zinc-400 text-xs mt-2 leading-relaxed">
+              Leveraging LLMs and generative pipelines to ingest 50+ articles, geopolitical documents, and trend signals in minutes to script foolproof narratives.
+            </p>
+          </div>
+
+          <div class="melon-card p-6 border-l-2 border-l-[#e5524a]">
+            <div class="w-8 h-8 rounded-lg bg-[#e5524a]/10 flex items-center justify-center text-[#e5524a] mb-4 font-mono font-bold text-sm">
+              04
+            </div>
+            <h3 class="font-display text-lg font-bold text-[#f6efed]">Sound Architecture</h3>
+            <p class="text-zinc-400 text-xs mt-2 leading-relaxed">
+              Audio drives 50% of retention. Foley swooshes, sub-bass impacts on major points, and surgical compression ensure the voice cuts through the mix.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 02: CREATIVE SPEC LAB & REEL SIMULATOR ==================== -->
+    <section id="lab" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-b border-[#f6efed]/[0.08]">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div>
+          <div class="font-mono text-xs text-[#ff3b3b] tracking-widest mb-2">// 02 • SPEC WORK & CAPABILITY LAB</div>
+          <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-[#f6efed] tracking-tight">
+            INTERACTIVE REEL SIMULATOR.
+          </h2>
+          <p class="text-zinc-400 text-sm mt-3 max-w-xl">
+            Experience my production pipeline in action. Toggle production layers to see how raw concept transforms into high-retention media.
+          </p>
+        </div>
+
+        <div class="mt-4 md:mt-0 flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-[#ff3b3b]"></span>
+          <span class="font-mono text-xs text-zinc-300">LIVE RENDER ENGINE</span>
+        </div>
+      </div>
+
+      <!-- Main Interactive Simulator Layout -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        
+        <!-- Interactive 9:16 Phone Mockup -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="phone-mockup-frame">
+            <div class="phone-island"></div>
+
+            <!-- Reel Player Screen Canvas -->
+            <div class="w-full h-full relative bg-gradient-to-b from-[#180606] via-[#090202] to-[#120404] flex flex-col justify-between p-5 pt-12 overflow-hidden">
+              
+              <!-- Layer 1: Generative Background Visuals -->
+              <div id="layer-bg" class="absolute inset-0 bg-cover bg-center transition-opacity duration-300 pointer-events-none opacity-80"
+                   style="background-image: radial-gradient(circle at 50% 40%, rgba(255,59,59,0.22), transparent 70%), linear-gradient(180deg, #0f0202 0%, #1c0505 50%, #000 100%);">
+                <!-- Abstract telemetry grid in video -->
+                <div class="absolute inset-0 bg-grid-pattern opacity-30"></div>
+              </div>
+
+              <!-- Top UI Layer: Creator Badge & Metrics -->
+              <div class="relative z-20 flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <div class="w-7 h-7 rounded-full bg-[#ff3b3b] text-white font-bold flex items-center justify-center text-xs">AS</div>
+                  <div>
+                    <div class="text-[11px] font-bold text-white tracking-tight">Anshuraj Sah</div>
+                    <div class="text-[9px] font-mono text-[#ffb3b3]">@anshuraj.producer</div>
+                  </div>
+                </div>
+
+                <div class="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-black/70 border border-white/10 text-[10px] font-mono">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#ff3b3b] animate-pulse"></span>
+                  <span id="reel-phase-tag" class="text-[#f6efed] font-bold">HOOK INTERRUPT</span>
+                </div>
+              </div>
+
+              <!-- Center Layer: Kinetic Callout Box & Subtitle Simulation -->
+              <div class="relative z-20 my-auto text-center px-2">
+                
+                <!-- Layer 2: Graphic Callout Tag -->
+                <div id="layer-callout" class="transition-opacity duration-300 mb-3 inline-block">
+                  <span class="px-3 py-1 rounded bg-black/80 border border-[#ff3b3b]/60 text-[11px] font-mono text-[#ffb3b3] font-semibold shadow-lg shadow-[#ff3b3b]/25">
+                    [00:01.2s RETENTION PEAK]
+                  </span>
+                </div>
+
+                <!-- Animated Kinetic Subtitles -->
+                <div id="layer-text" class="transition-opacity duration-300">
+                  <h4 id="reel-subtitle-text" class="font-display font-extrabold text-xl sm:text-2xl text-white tracking-tight uppercase leading-snug drop-shadow-[0_4px_12px_rgba(0,0,0,0.95)]">
+                    STOP SCROLLING. HERE IS WHY 99% FAIL.
+                  </h4>
+                </div>
+
+                <!-- Layer 3: Audio Waveform Activity -->
+                <div id="layer-audio" class="transition-opacity duration-300 flex justify-center items-end gap-1 h-8 mt-5">
+                  <span class="waveform-dynamic w-1 bg-[#ff3b3b] rounded-full h-4 transition-all duration-100"></span>
+                  <span class="waveform-dynamic w-1 bg-white rounded-full h-7 transition-all duration-100"></span>
+                  <span class="waveform-dynamic w-1 bg-[#ffb3b3] rounded-full h-5 transition-all duration-100"></span>
+                  <span class="waveform-dynamic w-1 bg-white rounded-full h-8 transition-all duration-100"></span>
+                  <span class="waveform-dynamic w-1 bg-[#ff3b3b] rounded-full h-3 transition-all duration-100"></span>
+                  <span class="waveform-dynamic w-1 bg-[#ff3b3b] rounded-full h-6 transition-all duration-100"></span>
+                  <span class="waveform-dynamic w-1 bg-white rounded-full h-4 transition-all duration-100"></span>
+                </div>
+
+              </div>
+
+              <!-- Bottom UI Layer: Scrubber & Status -->
+              <div class="relative z-20">
+                
+                <!-- Layer 4: Simulated Retention Graph Overlay -->
+                <div id="layer-retention" class="transition-opacity duration-300 p-2.5 rounded-xl bg-black/75 border border-white/10 mb-3">
+                  <div class="flex justify-between text-[9px] font-mono text-zinc-400 mb-1">
+                    <span>RETENTION PREDICTION</span>
+                    <span class="text-[#ff3b3b]">92.4% AVG</span>
+                  </div>
+                  <div class="h-6 w-full flex items-end gap-0.5">
+                    <span class="w-[8%] bg-[#ff3b3b] h-full rounded-t-sm"></span>
+                    <span class="w-[8%] bg-[#ff3b3b] h-[96%] rounded-t-sm"></span>
+                    <span class="w-[8%] bg-[#ff3b3b] h-[92%] rounded-t-sm"></span>
+                    <span class="w-[8%] bg-[#ffb3b3] h-[90%] rounded-t-sm"></span>
+                    <span class="w-[8%] bg-[#ffb3b3] h-[88%] rounded-t-sm"></span>
+                    <span class="w-[8%] bg-[#ffb3b3] h-[86%] rounded-t-sm"></span>
+                    <span class="w-[8%] bg-[#ff3b3b] h-[89%] rounded-t-sm"></span>
+                    <span class="w-[8%] bg-[#ff3b3b] h-[91%] rounded-t-sm"></span>
+                    <span class="w-[8%] bg-[#ff3b3b] h-[87%] rounded-t-sm"></span>
+                    <span class="w-[8%] bg-[#ff3b3b] h-[85%] rounded-t-sm"></span>
+                    <span class="w-[8%] bg-[#ff3b3b] h-[84%] rounded-t-sm"></span>
+                    <span class="w-[8%] bg-[#ff3b3b] h-[82%] rounded-t-sm"></span>
+                  </div>
+                </div>
+
+                <!-- Scrubber Progress Bar -->
+                <div class="w-full bg-white/20 h-1 rounded-full overflow-hidden mb-3">
+                  <div id="reel-progress-bar" class="bg-[#ff3b3b] h-full w-0 transition-all duration-300"></div>
+                </div>
+
+                <div class="flex items-center justify-between text-[11px] font-mono text-zinc-400">
+                  <span id="reel-status-indicator" class="text-zinc-500">PAUSED</span>
+                  <span>1080 × 1920 • 60 FPS</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Simulator Controls & Layer Inspector -->
+        <div class="lg:col-span-7">
+          <div class="melon-card p-6 sm:p-8">
+            
+            <div class="flex items-center justify-between border-b border-[#f6efed]/10 pb-4 mb-6">
+              <div>
+                <h3 class="font-display text-xl font-bold text-[#f6efed]">Production Layer Inspector</h3>
+                <p class="text-xs text-zinc-400 font-mono mt-1">Toggle active video components to inspect the construction.</p>
+              </div>
+
+              <!-- Main Play Simulation Button -->
+              <button id="reel-play-btn" class="btn-melon-primary px-4 py-2 text-xs">
+                <i id="play-icon" data-lucide="play" class="w-3.5 h-3.5 fill-current"></i>
+                <i id="pause-icon" data-lucide="pause" class="w-3.5 h-3.5 hidden fill-current"></i>
+                <span>PLAY / PAUSE REEL</span>
+              </button>
+            </div>
+
+            <!-- Layer Switches -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+              
+              <button class="reel-layer-btn flex items-center justify-between p-3.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.06] border border-white/10 text-left transition-all"
+                      data-layer="layer-bg">
+                <div class="flex items-center gap-3">
+                  <i data-lucide="image" class="w-4 h-4 text-zinc-400"></i>
+                  <div>
+                    <div class="text-xs font-bold text-[#f6efed]">Layer 1: Generative B-Roll</div>
+                    <div class="text-[10px] text-zinc-400 font-mono">Midjourney / Runway asset layer</div>
+                  </div>
+                </div>
+                <span class="text-[10px] font-mono text-[#ff3b3b]">TOGGLE</span>
+              </button>
+
+              <button class="reel-layer-btn flex items-center justify-between p-3.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.06] border border-white/10 text-left transition-all"
+                      data-layer="layer-text">
+                <div class="flex items-center gap-3">
+                  <i data-lucide="type" class="w-4 h-4 text-zinc-400"></i>
+                  <div>
+                    <div class="text-xs font-bold text-[#f6efed]">Layer 2: Kinetic Subtitles</div>
+                    <div class="text-[10px] text-zinc-400 font-mono">High-contrast 1.2s word cadence</div>
+                  </div>
+                </div>
+                <span class="text-[10px] font-mono text-[#ff3b3b]">TOGGLE</span>
+              </button>
+
+              <button class="reel-layer-btn flex items-center justify-between p-3.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.06] border border-white/10 text-left transition-all"
+                      data-layer="layer-callout">
+                <div class="flex items-center gap-3">
+                  <i data-lucide="crosshair" class="w-4 h-4 text-zinc-400"></i>
+                  <div>
+                    <div class="text-xs font-bold text-[#f6efed]">Layer 3: Visual Callouts</div>
+                    <div class="text-[10px] text-zinc-400 font-mono">Arrows, badges, dropoff hooks</div>
+                  </div>
+                </div>
+                <span class="text-[10px] font-mono text-[#ff3b3b]">TOGGLE</span>
+              </button>
+
+              <button class="reel-layer-btn flex items-center justify-between p-3.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.06] border border-white/10 text-left transition-all"
+                      data-layer="layer-retention">
+                <div class="flex items-center gap-3">
+                  <i data-lucide="line-chart" class="w-4 h-4 text-zinc-400"></i>
+                  <div>
+                    <div class="text-xs font-bold text-[#f6efed]">Layer 4: Retention Heatmap</div>
+                    <div class="text-[10px] text-zinc-400 font-mono">Audience attention analytics</div>
+                  </div>
+                </div>
+                <span class="text-[10px] font-mono text-[#ff3b3b]">TOGGLE</span>
+              </button>
+
+            </div>
+
+            <!-- Conceptual Production Treatments (Spec Projects) -->
+            <div class="border-t border-[#f6efed]/10 pt-6">
+              <div class="font-mono text-xs text-zinc-400 mb-3">// CURATED SPEC BLUEPRINTS:</div>
+              <div class="space-y-3">
+                
+                <div class="p-3.5 rounded-xl bg-black/50 border border-white/[0.08] flex items-center justify-between">
+                  <div class="flex items-center gap-3">
+                    <span class="badge-melon text-[10px]">CASE 01</span>
+                    <div>
+                      <div class="text-xs font-bold text-[#f6efed]">Geopolitical & News-Culture Deep Dive</div>
+                      <div class="text-[11px] text-zinc-400">Sarthak Goswami format: In-depth research, humor pacing, visual infographics.</div>
+                    </div>
+                  </div>
+                  <span class="text-xs font-mono text-zinc-500">60s / 10m Format</span>
+                </div>
+
+                <div class="p-3.5 rounded-xl bg-black/50 border border-white/[0.08] flex items-center justify-between">
+                  <div class="flex items-center gap-3">
+                    <span class="badge-melon text-[10px]">CASE 02</span>
+                    <div>
+                      <div class="text-xs font-bold text-[#f6efed]">Titanix Media Agency Production Engine</div>
+                      <div class="text-[11px] text-zinc-400">End-to-end multi-brand vertical workflow: Ideation &rarr; AI Script &rarr; Delivery.</div>
+                    </div>
+                  </div>
+                  <span class="text-xs font-mono text-zinc-500">Fast Turnaround</span>
+                </div>
+
+                <div class="p-3.5 rounded-xl bg-black/50 border border-white/[0.08] flex items-center justify-between">
+                  <div class="badge-melon text-[10px]">CASE 03</div>
+                  <div class="flex items-center gap-3">
+                    <div>
+                      <div class="text-xs font-bold text-[#f6efed]">Gaming & Pop-Culture Community Curation</div>
+                      <div class="text-[11px] text-zinc-400">Instagram community growth: Trend-jacking, meme pacing, cultural resonance.</div>
+                    </div>
+                  </div>
+                  <span class="text-xs font-mono text-zinc-500">Organic Scale</span>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ==================== NEW SECTION: VISUAL ORIGIN & CREATIVE ROOTS ==================== -->
+    <section id="origin-story" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-b border-[#f6efed]/[0.08]">
+      
+      <div class="mb-12">
+        <div class="font-mono text-xs text-[#ff3b3b] tracking-widest mb-2">// 04 • VISUAL ROOTS & CULTURE</div>
+        <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-[#f6efed] tracking-tight">
+          THE EARLY DAYS & THE CRAFT.
+        </h2>
+        <p class="text-zinc-400 text-sm mt-3 max-w-xl">
+          Visual communication didn't start with algorithms. It began with instinct, curiosity, and an unyielding obsession with audience emotion.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+        
+        <!-- Story Card 1: Childhood Origin Photo -->
+        <div class="melon-card p-6 sm:p-8 flex flex-col justify-between border-l-2 border-l-[#ff3b3b]">
+          <div>
+            <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-5">
+              <span class="badge-melon text-[10px]">ARCHIVE 2012 // THE PROTOTYPE</span>
+              <span class="font-mono text-xs text-zinc-500">EARLY ROOTS</span>
+            </div>
+
+            <!-- Photo Frame for Origin Photo -->
+            <div class="profile-photo-container aspect-[4/3] w-full mb-6 relative group overflow-hidden">
+              <img src="assets/origin.jpg" 
+                   alt="Anshuraj Sah — Childhood Story Photo" 
+                   class="profile-photo-img object-contain w-full h-full bg-[#050101]">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0a0303]/90 via-transparent to-transparent pointer-events-none"></div>
+              
+              <div class="absolute bottom-3 left-3 right-3 text-[11px] font-mono text-[#ffb3b3] bg-black/80 px-3 py-1.5 rounded-lg border border-white/10">
+                "MY NAME IS 'I'. MY PROBLEM IS 'LOVE' & MY SOLUTION IS 'YOU'"
+              </div>
+            </div>
+
+            <h3 class="font-display text-xl font-bold text-white mb-2">The First Creative Frame</h3>
+            <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed font-sans mb-4">
+              Storytelling started before I knew what retention pacing was. From holding up handwritten frames and dissecting pop-culture memes to engineering viral hooks for modern creator studios.
+            </p>
+            <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed font-sans">
+              The medium evolved from framed boards to 60fps vertical reels, but the obsession with connecting with an audience never changed.
+            </p>
+          </div>
+
+          <div class="pt-6 border-t border-white/10 mt-6 flex flex-wrap gap-2 text-[10px] font-mono text-zinc-400">
+            <span class="px-2.5 py-1 rounded bg-white/[0.04]">NATIVE CREATIVE INSTINCT</span>
+            <span class="px-2.5 py-1 rounded bg-white/[0.04]">MEME CULTURE LORE</span>
+            <span class="px-2.5 py-1 rounded bg-white/[0.04]">AUDIENCE EMPATHY</span>
+          </div>
+        </div>
+
+        <!-- Story Card 2: Academic & Professional Credentials Photo -->
+        <div class="melon-card p-6 sm:p-8 flex flex-col justify-between border-l-2 border-l-[#ffb3b3]">
+          <div>
+            <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-5">
+              <span class="badge-melon bg-[#ff3b3b]/10 text-[#f6efed] border-[#ff3b3b]/30 text-[10px]">CREDENTIALS // ACADEMIC DISCIPLINE</span>
+              <span class="font-mono text-xs text-zinc-500">DELHI UNIVERSITY</span>
+            </div>
+
+            <!-- Photo Frame for Academic Portrait -->
+            <div class="profile-photo-container aspect-[4/3] w-full mb-6 relative group overflow-hidden">
+              <img src="assets/academic.jpg" 
+                   alt="Anshuraj Sah — Academic Identity" 
+                   class="profile-photo-img object-contain w-full h-full bg-[#050101]">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0a0303]/90 via-transparent to-transparent pointer-events-none"></div>
+
+              <div class="absolute bottom-3 left-3 right-3 text-[11px] font-mono text-[#f6efed] bg-black/80 px-3 py-1.5 rounded-lg border border-white/10">
+                CLASS OF 2026 • COMMERCE & MEDIA DISCIPLINE
+              </div>
+            </div>
+
+            <h3 class="font-display text-xl font-bold text-white mb-2">Commerce Discipline Meets Velocity</h3>
+            <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed font-sans mb-4">
+              Pursuing B.Com at the University of Delhi (Class of 2026). Grounded in commercial principles, ROI-focused audience acquisition, and structured business communication.
+            </p>
+            <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed font-sans">
+              I give Titanix Media and collaborative studio teams a producer who understands budget, analytics, and deliverable discipline as deeply as motion graphics.
+            </p>
+          </div>
+
+          <div class="pt-6 border-t border-white/10 mt-6 flex flex-wrap gap-2 text-[10px] font-mono text-zinc-400">
+            <span class="px-2.5 py-1 rounded bg-white/[0.04]">DELHI UNIVERSITY (B.COM)</span>
+            <span class="px-2.5 py-1 rounded bg-white/[0.04]">SARVODAYA BOYS S.S.S.</span>
+            <span class="px-2.5 py-1 rounded bg-white/[0.04]">CBSE COMMERCE XII</span>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ==================== SECTION 05: VIRAL HOOK ENGINEERING LAB ==================== -->
+    <section id="hook-lab" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-b border-[#f6efed]/[0.08]">
+      
+      <div class="mb-10 text-center max-w-3xl mx-auto">
+        <div class="font-mono text-xs text-[#ff3b3b] tracking-widest mb-2">// 05 • RETENTION PSYCHOLOGY</div>
+        <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-[#f6efed] tracking-tight">
+          VIRAL HOOK ARCHITECTURE ENGINE.
+        </h2>
+        <p class="text-zinc-400 text-sm mt-3">
+          Select a niche and a psychological trigger. See the exact multi-sensory execution (Spoken Script + Visual Cue + Sound Design) I engineer for the first 3 seconds.
+        </p>
+      </div>
+
+      <!-- Controls: Category & Angle -->
+      <div class="melon-card p-6 sm:p-8">
+        
+        <!-- Category Selector -->
+        <div class="flex flex-wrap items-center justify-center gap-2 mb-6 border-b border-[#f6efed]/10 pb-6">
+          <span class="text-xs font-mono text-zinc-500 mr-2">TOPIC NICHE:</span>
+          <button class="hook-cat-btn active-cat px-3.5 py-1.5 rounded-lg text-xs font-mono font-bold bg-[#ff3b3b] text-white transition-all" data-cat="geopolitics">
+            GEOPOLITICS / CULTURE
+          </button>
+          <button class="hook-cat-btn px-3.5 py-1.5 rounded-lg text-xs font-mono font-bold bg-[#140606] text-zinc-400 hover:text-white transition-all" data-cat="finance">
+            FINANCE / TECH
+          </button>
+          <button class="hook-cat-btn px-3.5 py-1.5 rounded-lg text-xs font-mono font-bold bg-[#140606] text-zinc-400 hover:text-white transition-all" data-cat="popculture">
+            POP-CULTURE / GAMING
+          </button>
+          <button class="hook-cat-btn px-3.5 py-1.5 rounded-lg text-xs font-mono font-bold bg-[#140606] text-zinc-400 hover:text-white transition-all" data-cat="creatoreconomy">
+            CREATOR ECONOMY
+          </button>
+        </div>
+
+        <!-- Hook Strategy Angles -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
+          <button class="hook-angle-btn active-angle p-3 rounded-xl border border-[#ff3b3b] text-[#ff3b3b] bg-[#ff3b3b]/10 text-xs font-mono font-bold text-center transition-all" data-angle="interrupt">
+            PATTERN INTERRUPT
+          </button>
+          <button class="hook-angle-btn p-3 rounded-xl border border-white/10 text-zinc-400 hover:border-white/30 text-xs font-mono font-bold text-center transition-all" data-angle="contrarian">
+            CONTRARIAN TRUTH
+          </button>
+          <button class="hook-angle-btn p-3 rounded-xl border border-white/10 text-zinc-400 hover:border-white/30 text-xs font-mono font-bold text-center transition-all" data-angle="highstakes">
+            HIGH STAKES THREAT
+          </button>
+          <button class="hook-angle-btn p-3 rounded-xl border border-white/10 text-zinc-400 hover:border-white/30 text-xs font-mono font-bold text-center transition-all" data-angle="datashock">
+            DATA SHOCK / PROOF
+          </button>
+        </div>
+
+        <!-- Live Hook Breakdown Box -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 bg-black/70 rounded-2xl p-6 border border-white/10">
+          
+          <div class="md:col-span-7 space-y-4">
+            <div>
+              <div class="flex items-center justify-between text-xs font-mono text-zinc-400 mb-2">
+                <span class="flex items-center gap-1.5 text-[#ff3b3b]">
+                  <i data-lucide="mic" class="w-3.5 h-3.5"></i>
+                  SPOKEN SCRIPT (0.0s – 2.5s)
+                </span>
+                <span id="hook-retention-display" class="badge-melon text-[10px]">94% TARGET</span>
+              </div>
+              <p id="hook-script-display" class="text-base sm:text-lg font-display font-bold text-[#f6efed] leading-relaxed italic border-l-2 border-[#ff3b3b] pl-4 py-1">
+                "You think this conflict is about land. It's actually about a submarine cable 8,000 miles away."
+              </p>
+            </div>
+
+            <div class="pt-2">
+              <div class="text-xs font-mono text-zinc-400 mb-1 flex items-center gap-1.5 text-[#ffb3b3]">
+                <i data-lucide="video" class="w-3.5 h-3.5"></i>
+                VISUAL PACING & ASSET ACTION
+              </div>
+              <p id="hook-visual-display" class="text-xs sm:text-sm text-zinc-300 font-mono">
+                Fast zoom into ocean cross-section + kinetic map telemetry callouts
+              </p>
+            </div>
+          </div>
+
+          <div class="md:col-span-5 border-t md:border-t-0 md:border-l border-white/10 pt-4 md:pt-0 md:pl-6 flex flex-col justify-between">
+            <div>
+              <div class="text-xs font-mono text-zinc-400 mb-1 flex items-center gap-1.5 text-[#45e0ea]">
+                <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
+                SOUND DESIGN CUE
+              </div>
+              <p id="hook-sfx-display" class="text-xs sm:text-sm text-zinc-300 font-mono">
+                Sub-bass 808 drop + glitch static hit
+              </p>
+            </div>
+
+            <div class="mt-4 pt-4 border-t border-white/10 text-[11px] font-mono text-zinc-500">
+              ⚡ Engineered to prevent thumb flicking within the critical 3,000ms window.
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ==================== SECTION 06: CAPABILITIES & PRODUCTION ARSENAL ==================== -->
+    <section id="capabilities" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-b border-[#f6efed]/[0.08]">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div>
+          <div class="font-mono text-xs text-[#ff3b3b] tracking-widest mb-2">// 06 • TECHNICAL PROFICIENCY</div>
+          <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-[#f6efed] tracking-tight">
+            CORE SKILLS & ARSENAL.
+          </h2>
+          <p class="text-zinc-400 text-sm mt-3 max-w-xl">
+            Bridging cutting-edge AI generation tooling with classic high-craft video production and digital distribution.
+          </p>
+        </div>
+        <div class="mt-4 md:mt-0 font-mono text-xs text-zinc-500">
+          PROMPT ENGINEERING • MOTION • STRATEGY
+        </div>
+      </div>
+
+      <!-- 4 Pillars Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Pillar 1: AI & Creative Tech -->
+        <div class="melon-card p-6 flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-[#ff3b3b]/10 text-[#ff3b3b] flex items-center justify-center mb-4">
+              <i data-lucide="cpu" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-display text-lg font-bold text-[#f6efed] mb-2">AI & Creative Tech</h3>
+            <p class="text-xs text-zinc-400 mb-4 leading-relaxed">
+              Supercharging production pipelines with generative AI to compress hours of manual research and asset creation into minutes.
+            </p>
+            
+            <ul class="space-y-1.5 text-xs font-mono text-zinc-300">
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#ff3b3b]"></span>
+                <span>Generative AI Workflows</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#ff3b3b]"></span>
+                <span>Prompt Engineering</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#ff3b3b]"></span>
+                <span>AI Visual & Audio Generation</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#ff3b3b]"></span>
+                <span>AI-Assisted Script Research</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="pt-6 mt-6 border-t border-white/[0.08] flex flex-wrap gap-1.5">
+            <span class="px-2 py-0.5 rounded bg-white/[0.04] text-[10px] font-mono text-zinc-400">ChatGPT</span>
+            <span class="px-2 py-0.5 rounded bg-white/[0.04] text-[10px] font-mono text-zinc-400">Claude</span>
+            <span class="px-2 py-0.5 rounded bg-white/[0.04] text-[10px] font-mono text-zinc-400">Midjourney</span>
+            <span class="px-2 py-0.5 rounded bg-white/[0.04] text-[10px] font-mono text-zinc-400">ElevenLabs</span>
+          </div>
+        </div>
+
+        <!-- Pillar 2: Visual & Motion -->
+        <div class="melon-card p-6 flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-[#ffb3b3]/10 text-[#ffb3b3] flex items-center justify-center mb-4">
+              <i data-lucide="film" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-display text-lg font-bold text-[#f6efed] mb-2">Visual & Motion</h3>
+            <p class="text-xs text-zinc-400 mb-4 leading-relaxed">
+              Crafting kinetic typography, custom motion graphics callouts, and audio design that retains viewer attention across platforms.
+            </p>
+            
+            <ul class="space-y-1.5 text-xs font-mono text-zinc-300">
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#ffb3b3]"></span>
+                <span>Kinetic Typography</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#ffb3b3]"></span>
+                <span>Motion Graphics Callouts</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#ffb3b3]"></span>
+                <span>Sound Design & Audio Pacing</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#ffb3b3]"></span>
+                <span>Color Grading & Clean Cut</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="pt-6 mt-6 border-t border-white/[0.08] flex flex-wrap gap-1.5">
+            <span class="px-2 py-0.5 rounded bg-white/[0.04] text-[10px] font-mono text-zinc-400">Premiere Pro</span>
+            <span class="px-2 py-0.5 rounded bg-white/[0.04] text-[10px] font-mono text-zinc-400">After Effects</span>
+            <span class="px-2 py-0.5 rounded bg-white/[0.04] text-[10px] font-mono text-zinc-400">CapCut Pro</span>
+            <span class="px-2 py-0.5 rounded bg-white/[0.04] text-[10px] font-mono text-zinc-400">Photoshop</span>
+          </div>
+        </div>
+
+        <!-- Pillar 3: Content & Social -->
+        <div class="melon-card p-6 flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-[#45e0ea]/10 text-[#45e0ea] flex items-center justify-center mb-4">
+              <i data-lucide="trending-up" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-display text-lg font-bold text-[#f6efed] mb-2">Content & Social</h3>
+            <p class="text-xs text-zinc-400 mb-4 leading-relaxed">
+              Data-informed topic research, thumbnail click-through optimization, and viral hook engineering to beat the feed.
+            </p>
+            
+            <ul class="space-y-1.5 text-xs font-mono text-zinc-300">
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#45e0ea]"></span>
+                <span>Trend & Topic Research</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#45e0ea]"></span>
+                <span>Hook Ideation & Scripting</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#45e0ea]"></span>
+                <span>CTR Thumbnail Strategy</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#45e0ea]"></span>
+                <span>Audience Retention Metrics</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="pt-6 mt-6 border-t border-white/[0.08] flex flex-wrap gap-1.5">
+            <span class="px-2 py-0.5 rounded bg-white/[0.04] text-[10px] font-mono text-zinc-400">YouTube Studio</span>
+            <span class="px-2 py-0.5 rounded bg-white/[0.04] text-[10px] font-mono text-zinc-400">Instagram Algo</span>
+            <span class="px-2 py-0.5 rounded bg-white/[0.04] text-[10px] font-mono text-zinc-400">Audience Cohorts</span>
+          </div>
+        </div>
+
+        <!-- Pillar 4: Production & Workflow -->
+        <div class="melon-card p-6 flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-[#e5524a]/10 text-[#e5524a] flex items-center justify-center mb-4">
+              <i data-lucide="layers" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-display text-lg font-bold text-[#f6efed] mb-2">Production & Workflow</h3>
+            <p class="text-xs text-zinc-400 mb-4 leading-relaxed">
+              Reliable behind-the-scenes coordination, footage asset management, and rapid delivery under tight publishing schedules.
+            </p>
+            
+            <ul class="space-y-1.5 text-xs font-mono text-zinc-300">
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#e5524a]"></span>
+                <span>BTS Shoot Assistance</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#e5524a]"></span>
+                <span>Asset & Footage Organization</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#e5524a]"></span>
+                <span>Fast-Turnaround Delivery</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#e5524a]"></span>
+                <span>Cross-Team Brainstorming</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="pt-6 mt-6 border-t border-white/[0.08] flex flex-wrap gap-1.5">
+            <span class="px-2 py-0.5 rounded bg-white/[0.04] text-[10px] font-mono text-zinc-400">Notion</span>
+            <span class="px-2 py-0.5 rounded bg-white/[0.04] text-[10px] font-mono text-zinc-400">Google Drive</span>
+            <span class="px-2 py-0.5 rounded bg-white/[0.04] text-[10px] font-mono text-zinc-400">Frame.io</span>
+            <span class="px-2 py-0.5 rounded bg-white/[0.04] text-[10px] font-mono text-zinc-400">Slack</span>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ==================== SECTION 07: EXPERIENCE & PEDIGREE ==================== -->
+    <section id="experience" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-b border-[#f6efed]/[0.08]">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        
+        <div class="lg:col-span-4">
+          <div class="font-mono text-xs text-[#ff3b3b] tracking-widest mb-2">// 07 • TRACK RECORD</div>
+          <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-[#f6efed] tracking-tight">
+            EXPERIENCE & INITIATIVES.
+          </h2>
+          <p class="text-zinc-400 text-sm mt-3 leading-relaxed">
+            Hands-on entrepreneurship and self-directed media management. Building production muscle across brand delivery and independent channels.
+          </p>
+
+          <!-- Education Card with Academic Portrait -->
+          <div class="mt-8 melon-card p-5">
+            <div class="flex items-center gap-2 text-xs font-mono text-[#ff3b3b] mb-3">
+              <i data-lucide="graduation-cap" class="w-4 h-4"></i>
+              <span>EDUCATION</span>
+            </div>
+            
+            <div class="space-y-3 text-xs">
+              <div>
+                <div class="font-bold text-white">Undergraduate Program (B.Com)</div>
+                <div class="text-zinc-400">School of Open Learning, University of Delhi</div>
+                <div class="text-[10px] font-mono text-zinc-500">2026 – Present</div>
+              </div>
+              <div class="pt-2 border-t border-white/[0.06]">
+                <div class="font-bold text-white">Senior Secondary (Class XII — CBSE, Commerce)</div>
+                <div class="text-zinc-400">Sarvodaya Boys S.S.S., Matiala, New Delhi • 2026</div>
+              </div>
+              <div class="pt-2 border-t border-white/[0.06]">
+                <div class="font-bold text-white">Secondary School (Class X — CBSE)</div>
+                <div class="text-zinc-400">Sarvodaya Boys S.S.S., Matiala, New Delhi • 2024</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-8 space-y-6">
+          
+          <!-- Role 1 -->
+          <div class="melon-card p-6 sm:p-8">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/10 pb-4 mb-4">
+              <div>
+                <span class="badge-melon text-[10px] mb-1">FOUNDER & PRODUCER</span>
+                <h3 class="font-display text-xl font-bold text-[#f6efed]">Titanix Media</h3>
+                <div class="text-xs font-mono text-zinc-400">Digital Media Agency</div>
+              </div>
+              <span class="text-xs font-mono text-zinc-500">Agency Venture</span>
+            </div>
+
+            <ul class="space-y-2 text-xs sm:text-sm text-zinc-300 leading-relaxed list-disc list-inside">
+              <li>Manage end-to-end digital media production for brands, overseeing ideation, AI-assisted scripting, motion design, and final social media delivery.</li>
+              <li>Develop dynamic visual graphics, kinetic typography, and narrative pacing tailored to retain audience attention across YouTube and short-form vertical feeds.</li>
+              <li>Coordinate multi-project deadlines in fast-paced environments, translating raw assets and creative briefs into polished, platform-ready deliverables.</li>
+            </ul>
+          </div>
+
+          <!-- Role 2 -->
+          <div class="melon-card p-6 sm:p-8">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/10 pb-4 mb-4">
+              <div>
+                <span class="badge-melon text-[10px] mb-1">CONTENT CREATOR</span>
+                <h3 class="font-display text-xl font-bold text-[#f6efed]">Digital Producer & Channel Manager</h3>
+                <div class="text-xs font-mono text-zinc-400">YouTube Channel • Independent Project</div>
+              </div>
+              <span class="text-xs font-mono text-zinc-500">Independent Channel</span>
+            </div>
+
+            <ul class="space-y-2 text-xs sm:text-sm text-zinc-300 leading-relaxed list-disc list-inside">
+              <li>Conceptualize, script, record, and produce original long-form and short-form media, managing the complete production pipeline independently.</li>
+              <li>Conduct AI-accelerated trend and topic research to identify high-performing formats, viral hooks, and audience engagement patterns.</li>
+              <li>Craft custom thumbnails, visual storytelling elements, and audio pacing to improve click-through rates and viewer retention.</li>
+            </ul>
+          </div>
+
+          <!-- Role 3 -->
+          <div class="melon-card p-6 sm:p-8">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/10 pb-4 mb-4">
+              <div>
+                <span class="badge-melon text-[10px] mb-1">COMMUNITY GROWTH</span>
+                <h3 class="font-display text-xl font-bold text-[#f6efed]">Social Media Manager & Curator</h3>
+                <div class="text-xs font-mono text-zinc-400">Gaming & Pop-Culture Community • Instagram</div>
+              </div>
+              <span class="text-xs font-mono text-zinc-500">Social Curation</span>
+            </div>
+
+            <ul class="space-y-2 text-xs sm:text-sm text-zinc-300 leading-relaxed list-disc list-inside">
+              <li>Built and managed a niche gaming community page, coordinating fast-turnaround Reels, memes, and trend-driven posts tailored to audience culture.</li>
+              <li>Monitored platform analytics, audio trends, and creator formats to optimize posting schedules and maximize organic reach.</li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ==================== SECTION 08: melon.studio-INSPIRED LIVE BRIEF GENERATOR ==================== -->
+    <section id="brief-builder" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      
+      <div class="mb-10 text-center max-w-2xl mx-auto">
+        <div class="font-mono text-xs text-[#ff3b3b] tracking-widest mb-2">// 08 • FAST ONBOARDING</div>
+        <h2 class="font-display text-3xl sm:text-5xl font-extrabold text-[#f6efed] tracking-tight">
+          BUILD A PROJECT BRIEF.
+        </h2>
+        <p class="text-zinc-400 text-sm mt-3">
+          Inspired by melon.studio's live brief utility. Configure what you need from me, generate a clean markdown brief, and send it directly in one click.
+        </p>
+      </div>
+
+      <div class="melon-card p-6 sm:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Form Controls -->
+        <div class="lg:col-span-6 space-y-6">
+          
+          <!-- Role Type -->
+          <div>
+            <label class="block text-xs font-mono text-zinc-300 mb-2">// 1. SELECT COLLABORATION TYPE:</label>
+            <select id="brief-role-select" class="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-[#f6efed] focus:outline-none focus:border-[#ff3b3b] font-mono">
+              <option value="Creative Intern — Content, Social Media & Production">Creative Intern — Content, Social Media & Production</option>
+              <option value="AI-Native Short-Form Explainer Producer">AI-Native Short-Form Explainer Producer</option>
+              <option value="YouTube Long-Form Video Strategist">YouTube Long-Form Video Strategist</option>
+              <option value="Titanix Media Agency Production Sprint">Titanix Media Agency Production Sprint</option>
+              <option value="BTS Shoot Assistance & Multi-Platform Coordinator">BTS Shoot Assistance & Multi-Platform Coordinator</option>
+            </select>
+          </div>
+
+          <!-- Target Platforms -->
+          <div>
+            <label class="block text-xs font-mono text-zinc-300 mb-2">// 2. TARGET PLATFORMS (SELECT ALL THAT APPLY):</label>
+            <div class="grid grid-cols-2 gap-2 text-xs font-mono">
+              <label class="flex items-center gap-2 p-2.5 rounded-lg bg-white/[0.02] border border-white/10 hover:border-[#ff3b3b]/50 cursor-pointer">
+                <input type="checkbox" value="YouTube Long-Form" class="brief-platform-check accent-[#ff3b3b]" checked>
+                <span>YouTube Long-Form</span>
+              </label>
+              <label class="flex items-center gap-2 p-2.5 rounded-lg bg-white/[0.02] border border-white/10 hover:border-[#ff3b3b]/50 cursor-pointer">
+                <input type="checkbox" value="Instagram Reels" class="brief-platform-check accent-[#ff3b3b]" checked>
+                <span>Instagram Reels</span>
+              </label>
+              <label class="flex items-center gap-2 p-2.5 rounded-lg bg-white/[0.02] border border-white/10 hover:border-[#ff3b3b]/50 cursor-pointer">
+                <input type="checkbox" value="YouTube Shorts" class="brief-platform-check accent-[#ff3b3b]" checked>
+                <span>YouTube Shorts</span>
+              </label>
+              <label class="flex items-center gap-2 p-2.5 rounded-lg bg-white/[0.02] border border-white/10 hover:border-[#ff3b3b]/50 cursor-pointer">
+                <input type="checkbox" value="Cross-Platform Omnichannel" class="brief-platform-check accent-[#ff3b3b]">
+                <span>Cross-Platform</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Required Services -->
+          <div>
+            <label class="block text-xs font-mono text-zinc-300 mb-2">// 3. CAPABILITIES NEEDED:</label>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-mono">
+              <label class="flex items-center gap-2 p-2.5 rounded-lg bg-white/[0.02] border border-white/10 hover:border-[#ff3b3b]/50 cursor-pointer">
+                <input type="checkbox" value="Viral Hook Ideation" class="brief-service-check accent-[#ff3b3b]" checked>
+                <span>Viral Hook Ideation</span>
+              </label>
+              <label class="flex items-center gap-2 p-2.5 rounded-lg bg-white/[0.02] border border-white/10 hover:border-[#ff3b3b]/50 cursor-pointer">
+                <input type="checkbox" value="Kinetic Motion & Typography" class="brief-service-check accent-[#ff3b3b]" checked>
+                <span>Kinetic Typography</span>
+              </label>
+              <label class="flex items-center gap-2 p-2.5 rounded-lg bg-white/[0.02] border border-white/10 hover:border-[#ff3b3b]/50 cursor-pointer">
+                <input type="checkbox" value="AI-Assisted Research & Scripting" class="brief-service-check accent-[#ff3b3b]" checked>
+                <span>AI Research & Scripting</span>
+              </label>
+              <label class="flex items-center gap-2 p-2.5 rounded-lg bg-white/[0.02] border border-white/10 hover:border-[#ff3b3b]/50 cursor-pointer">
+                <input type="checkbox" value="Sound Design & Foley" class="brief-service-check accent-[#ff3b3b]">
+                <span>Sound Design & Foley</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Turnaround Timeline -->
+          <div>
+            <label class="block text-xs font-mono text-zinc-300 mb-2">// 4. TURNAROUND TIME EXPECTED:</label>
+            <select id="brief-turnaround-select" class="w-full bg-black/60 border border-white/15 rounded-xl px-4 py-3 text-sm text-[#f6efed] focus:outline-none focus:border-[#ff3b3b] font-mono">
+              <option value="Rapid Turnaround (24h – 48h)">Rapid Turnaround (24h – 48h)</option>
+              <option value="Weekly Production Sprint">Weekly Production Sprint</option>
+              <option value="Full-Time / Recurring Internship Cadence">Full-Time / Recurring Internship Cadence</option>
+              <option value="Flexible / Exploration">Flexible / Exploration</option>
+            </select>
+          </div>
+
+        </div>
+
+        <!-- Live Code/Brief Terminal Preview -->
+        <div class="lg:col-span-6 flex flex-col justify-between h-full bg-black/85 rounded-2xl border border-white/15 p-6 font-mono text-xs">
+          
+          <div>
+            <div class="flex items-center justify-between border-b border-white/10 pb-3 mb-4">
+              <div class="flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-[#ff3b3b]/80"></span>
+                <span class="w-3 h-3 rounded-full bg-amber-500/80"></span>
+                <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
+                <span class="text-[11px] text-zinc-400 ml-2">brief_draft.md</span>
+              </div>
+              <span class="text-[#ff3b3b] text-[10px]">AUTOSAVED</span>
+            </div>
+
+            <pre id="brief-preview-code" class="text-zinc-300 whitespace-pre-wrap leading-relaxed overflow-x-auto selection:bg-[#ff3b3b] selection:text-white">
+// Generating brief...
+            </pre>
+          </div>
+
+          <!-- Actions -->
+          <div class="pt-6 border-t border-white/10 flex flex-wrap gap-3">
+            <button id="copy-brief-btn" class="btn-melon-secondary text-xs flex-1 justify-center">
+              <i data-lucide="copy" class="w-3.5 h-3.5 text-[#ff3b3b]"></i>
+              <span>COPY BRIEF</span>
+            </button>
+            <button id="send-email-btn" class="btn-melon-primary text-xs flex-1 justify-center">
+              <i data-lucide="send" class="w-3.5 h-3.5"></i>
+              <span>EMAIL ANSHURAJ</span>
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="border-t border-[#f6efed]/[0.08] bg-[#0a0303] py-16 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start mb-12">
+        
+        <div class="md:col-span-6">
+          <div class="font-display text-2xl font-bold text-white mb-2">ANSHURAJ SAH</div>
+          <p class="text-zinc-400 text-xs sm:text-sm max-w-md leading-relaxed font-mono">
+            Creative Intern — Content, Social Media & Production.<br>
+            Uttam Nagar, West Delhi — 110059.<br>
+            Ready to empower creator studios with high-velocity AI & motion workflows.
+          </p>
+        </div>
+
+        <div class="md:col-span-6 flex flex-col md:items-end gap-3 text-xs font-mono">
+          <a href="mailto:anshurajkumarsah@gmail.com" class="text-[#ff3b3b] hover:underline flex items-center gap-1.5">
+            <i data-lucide="mail" class="w-3.5 h-3.5"></i>
+            <span>anshurajkumarsah@gmail.com</span>
+          </a>
+          <a href="tel:+918448343896" class="text-zinc-300 hover:text-white flex items-center gap-1.5">
+            <i data-lucide="phone" class="w-3.5 h-3.5"></i>
+            <span>+91 8448343896</span>
+          </a>
+          <span class="text-zinc-500">
+            DELHI UNIVERSITY (B.COM) • TITANIX MEDIA
+          </span>
+        </div>
+
+      </div>
+
+      <div class="border-t border-[#f6efed]/[0.08] pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] font-mono text-zinc-500 gap-4">
+        <div>&copy; 2026 ANSHURAJ SAH. ALL RIGHTS RESERVED.</div>
+        <div class="flex items-center gap-4">
+          <a href="resume.html" class="text-[#ff3b3b] hover:underline font-bold">[VIEW RESUME ↗]</a>
+          <a href="#hero" class="hover:text-[#ff3b3b] transition-colors">[BACK TO TOP ↑]</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Toast Notification for Copying -->
+  <div id="copy-toast" class="fixed bottom-6 right-6 z-50 bg-[#ff3b3b] text-white px-4 py-2.5 rounded-xl font-mono text-xs font-bold shadow-2xl flex items-center gap-2 opacity-0 translate-y-2 transition-all duration-300 pointer-events-none">
+    <i data-lucide="check" class="w-4 h-4"></i>
+    <span>Email copied to clipboard!</span>
+  </div>
+
+  <!-- Scripts -->
+  <script src="app.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
