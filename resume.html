@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anshuraj Sah — Resume // Creative Producer & AI Strategist</title>
+  <meta name="description" content="Resume of Anshuraj Sah — Creative Intern, AI-native producer, and founder of Titanix Media.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+    :root {
+      --melon-red: #ff3b3b;
+      --melon-coral: #e5524a;
+      --liquid-pink: #ffb3b3;
+      --bg-dark: #0a0303;
+      --bg-surface: #120505;
+      --bg-card: rgba(22, 7, 7, 0.75);
+      --text-main: #f6efed;
+      --text-muted: rgba(246, 239, 237, 0.65);
+      --border-subtle: rgba(246, 239, 237, 0.12);
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    .font-display {
+      font-family: 'Space Grotesk', sans-serif;
+      letter-spacing: -0.02em;
+    }
+
+    .font-mono-code {
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .melon-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+    }
+
+    .badge-melon {
+      background: rgba(255, 59, 59, 0.12);
+      color: var(--liquid-pink);
+      border: 1px solid rgba(255, 59, 59, 0.35);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 9999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    /* Print Styles (Auto A4 optimization) */
+    @media print {
+      body {
+        background-color: #ffffff !important;
+        color: #111111 !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .print-container {
+        padding: 0 !important;
+        margin: 0 !important;
+        max-width: 100% !important;
+        box-shadow: none !important;
+        border: none !important;
+      }
+      .melon-card {
+        background: #fafafa !important;
+        border: 1px solid #e0e0e0 !important;
+        color: #111111 !important;
+        break-inside: avoid;
+      }
+      .badge-melon {
+        background: #fee2e2 !important;
+        color: #b91c1c !important;
+        border: 1px solid #f87171 !important;
+      }
+      .text-zinc-400, .text-zinc-500, .text-zinc-300 {
+        color: #4b5563 !important;
+      }
+      .text-white, .text-\[\#f6efed\] {
+        color: #000000 !important;
+      }
+      .border-white\/10, .border-\[\#f6efed\]\/\[0\.08\] {
+        border-color: #e5e7eb !important;
+      }
+      a {
+        text-decoration: none !important;
+        color: inherit !important;
+      }
+    }
+  </style>
+</head>
+<body class="min-h-screen py-8 px-4 sm:px-6 lg:px-8 selection:bg-[#ff3b3b] selection:text-white">
+
+  <!-- Top Action Bar (No Print) -->
+  <div class="no-print max-w-4xl mx-auto mb-8 flex flex-wrap items-center justify-between gap-4 bg-[#120505] border border-white/10 p-4 rounded-2xl shadow-xl">
+    <div class="flex items-center gap-3">
+      <a href="index.html" class="flex items-center gap-1.5 text-xs font-mono text-zinc-400 hover:text-[#ff3b3b] transition-colors">
+        <i data-lucide="arrow-left" class="w-4 h-4"></i>
+        <span>RETURN TO PORTFOLIO</span>
+      </a>
+      <span class="text-zinc-600">|</span>
+      <span class="badge-melon text-[10px]">MELON.STUDIO RESUME EDITION</span>
+    </div>
+
+    <div class="flex items-center gap-3">
+      <button id="copy-markdown-btn" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 text-xs font-mono text-zinc-300 transition-all">
+        <i data-lucide="copy" class="w-3.5 h-3.5 text-[#ff3b3b]"></i>
+        <span>COPY TEXT</span>
+      </button>
+
+      <button onclick="window.print()" class="flex items-center gap-1.5 px-4 py-1.5 rounded-lg bg-[#ff3b3b] hover:bg-[#ff5252] text-white text-xs font-mono font-bold transition-all shadow-lg shadow-[#ff3b3b]/30">
+        <i data-lucide="printer" class="w-3.5 h-3.5"></i>
+        <span>PRINT / SAVE AS PDF</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Main Resume Document Container (Engineered for A4 & Screen) -->
+  <main class="print-container max-w-4xl mx-auto bg-[#0d0303] border border-[#f6efed]/[0.12] rounded-3xl p-6 sm:p-12 shadow-2xl relative overflow-hidden">
+    
+    <!-- Ambient Top Border Glow -->
+    <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#ff3b3b] via-[#ffb3b3] to-[#ff3b3b]"></div>
+
+    <!-- ==================== HEADER: IDENTITY & CONTACT ==================== -->
+    <header class="border-b border-[#f6efed]/10 pb-8 mb-8">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+        
+        <!-- Left: Name & Title -->
+        <div>
+          <div class="flex items-center gap-2 mb-2 font-mono text-xs text-[#ff3b3b] tracking-wider">
+            <span class="w-2 h-2 rounded-full bg-[#ff3b3b] animate-pulse"></span>
+            <span>// CREATIVE INTERN & PRODUCER</span>
+          </div>
+
+          <h1 class="font-display text-4xl sm:text-5xl font-extrabold text-[#f6efed] tracking-tight">
+            ANSHURAJ SAH
+          </h1>
+
+          <div class="text-xs sm:text-sm font-mono text-[#ffb3b3] mt-2 font-semibold tracking-wide">
+            CONTENT, SOCIAL MEDIA & DIGITAL PRODUCTION
+          </div>
+        </div>
+
+        <!-- Right: Portrait Photo & Telemetry -->
+        <div class="flex items-center gap-4">
+          <div class="w-20 h-24 rounded-xl overflow-hidden border border-[#ff3b3b]/40 shadow-md bg-[#180505] flex-shrink-0">
+            <img src="assets/academic.jpg" 
+                 alt="Anshuraj Sah" 
+                 class="w-full h-full object-cover object-top"
+                 onerror="this.src='assets/profile.jpg'">
+          </div>
+
+          <div class="text-xs font-mono text-zinc-400 space-y-1">
+            <div class="flex items-center gap-1.5 text-[#f6efed]">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-[#ff3b3b]"></i>
+              <span>Uttam Nagar, West Delhi — 110059</span>
+            </div>
+            <div class="flex items-center gap-1.5">
+              <i data-lucide="mail" class="w-3.5 h-3.5 text-[#ff3b3b]"></i>
+              <a href="mailto:anshurajkumarsah@gmail.com" class="hover:underline text-zinc-300">anshurajkumarsah@gmail.com</a>
+            </div>
+            <div class="flex items-center gap-1.5">
+              <i data-lucide="phone" class="w-3.5 h-3.5 text-[#ff3b3b]"></i>
+              <a href="tel:+918448343896" class="hover:underline text-zinc-300">+91 8448343896</a>
+            </div>
+            <div class="flex items-center gap-1.5 text-zinc-400">
+              <i data-lucide="globe" class="w-3.5 h-3.5 text-[#ff3b3b]"></i>
+              <span>Founder, Titanix Media</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Executive Profile Statement -->
+      <div class="mt-6 pt-6 border-t border-white/[0.06]">
+        <p class="text-xs sm:text-sm text-zinc-300 leading-relaxed font-sans">
+          <strong class="text-white">Creative strategist, AI-native producer, and digital media coordinator</strong> with hands-on experience in project production, motion design, and social media storytelling. Skilled at leveraging generative AI workflows, researching internet trends, scripting engaging hooks, and coordinating fast-paced production—ready to support BTS shoots, creative brainstorming, and multi-platform workflows for Sarthak Goswami's team.
+        </p>
+      </div>
+    </header>
+
+    <!-- ==================== SECTION 01: CREATIVE & PRODUCTION EXPERIENCE ==================== -->
+    <section class="mb-10">
+      <div class="flex items-center justify-between border-b border-[#f6efed]/10 pb-2 mb-6">
+        <h2 class="font-display text-lg font-bold text-white flex items-center gap-2">
+          <span class="text-[#ff3b3b] font-mono text-sm">// 01</span>
+          <span>CREATIVE & PRODUCTION EXPERIENCE</span>
+        </h2>
+        <span class="font-mono text-[10px] text-zinc-500">AGENCY & INDEPENDENT</span>
+      </div>
+
+      <div class="space-y-6">
+        
+        <!-- Role 1 -->
+        <div class="melon-card p-5 border-l-2 border-l-[#ff3b3b]">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
+            <div>
+              <span class="text-sm font-bold text-white font-display">Founder & Creative Producer</span>
+              <span class="text-xs font-mono text-[#ffb3b3] ml-2">| Titanix Media</span>
+            </div>
+            <span class="text-[11px] font-mono text-zinc-400">Digital Media Agency</span>
+          </div>
+
+          <ul class="space-y-1.5 text-xs text-zinc-300 leading-relaxed list-disc list-inside">
+            <li>Manage end-to-end digital media production for brands, overseeing ideation, AI-assisted scripting, motion design, and final social media delivery.</li>
+            <li>Develop dynamic visual graphics, kinetic typography, and narrative pacing tailored to retain audience attention across YouTube and short-form vertical feeds.</li>
+            <li>Coordinate multi-project deadlines in fast-paced environments, translating raw assets and creative briefs into polished, platform-ready deliverables.</li>
+          </ul>
+        </div>
+
+        <!-- Role 2 -->
+        <div class="melon-card p-5 border-l-2 border-l-[#ffb3b3]">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
+            <div>
+              <span class="text-sm font-bold text-white font-display">Digital Producer & Channel Manager</span>
+              <span class="text-xs font-mono text-[#ffb3b3] ml-2">| YouTube Channel</span>
+            </div>
+            <span class="text-[11px] font-mono text-zinc-400">Independent Project</span>
+          </div>
+
+          <ul class="space-y-1.5 text-xs text-zinc-300 leading-relaxed list-disc list-inside">
+            <li>Conceptualize, script, record, and produce original long-form and short-form media, managing the complete production pipeline independently.</li>
+            <li>Conduct AI-accelerated trend and topic research to identify high-performing formats, viral hooks, and audience engagement patterns.</li>
+            <li>Craft custom thumbnails, visual storytelling elements, and audio pacing to improve click-through rates and viewer retention.</li>
+          </ul>
+        </div>
+
+        <!-- Role 3 -->
+        <div class="melon-card p-5 border-l-2 border-l-zinc-600">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
+            <div>
+              <span class="text-sm font-bold text-white font-display">Social Media Manager & Curator</span>
+              <span class="text-xs font-mono text-[#ffb3b3] ml-2">| Gaming & Pop-Culture Community</span>
+            </div>
+            <span class="text-[11px] font-mono text-zinc-400">Instagram Community</span>
+          </div>
+
+          <ul class="space-y-1.5 text-xs text-zinc-300 leading-relaxed list-disc list-inside">
+            <li>Built and managed a niche gaming community page, coordinating fast-turnaround Reels, memes, and trend-driven posts tailored to audience culture.</li>
+            <li>Monitored platform analytics, audio trends, and creator formats to optimize posting schedules and maximize organic reach.</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 02: SELECTED CREATIVE PROJECTS ==================== -->
+    <section class="mb-10">
+      <div class="flex items-center justify-between border-b border-[#f6efed]/10 pb-2 mb-6">
+        <h2 class="font-display text-lg font-bold text-white flex items-center gap-2">
+          <span class="text-[#ff3b3b] font-mono text-sm">// 02</span>
+          <span>SELECTED CREATIVE PROJECTS & CAPABILITIES</span>
+        </h2>
+        <span class="font-mono text-[10px] text-zinc-500">SHOWCASE</span>
+      </div>
+
+      <div class="melon-card p-5">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-2">
+          <div class="font-bold text-white text-xs sm:text-sm font-display">
+            Short-Form & Explainer Production Suite | Motion Graphics & Storytelling
+          </div>
+          <span class="badge-melon text-[9px]">PORTFOLIO SHOWCASE</span>
+        </div>
+
+        <ul class="space-y-1.5 text-xs text-zinc-300 leading-relaxed list-disc list-inside mt-2">
+          <li>Produced high-retention Reels and explainer pieces combining visual layering, custom motion callouts, sound design, and clean narrative pacing.</li>
+          <li>Experienced in turning complex or informational topics into accessible, entertaining visual stories suited for news-and-culture audiences.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 03: CORE SKILLS & ARSENAL ==================== -->
+    <section class="mb-10">
+      <div class="flex items-center justify-between border-b border-[#f6efed]/10 pb-2 mb-6">
+        <h2 class="font-display text-lg font-bold text-white flex items-center gap-2">
+          <span class="text-[#ff3b3b] font-mono text-sm">// 03</span>
+          <span>CORE SKILLS & PRODUCTION ARSENAL</span>
+        </h2>
+        <span class="font-mono text-[10px] text-zinc-500">PILLARS</span>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        
+        <div class="melon-card p-4">
+          <div class="flex items-center gap-2 font-mono text-xs text-[#ff3b3b] font-bold mb-2">
+            <i data-lucide="cpu" class="w-3.5 h-3.5"></i>
+            <span>AI & CREATIVE TECH</span>
+          </div>
+          <p class="text-xs text-zinc-300 leading-relaxed font-mono">
+            Generative AI Workflows, Prompt Engineering, AI-Assisted Research & Scripting, AI Visual & Audio Generation, Workflow Automation.
+          </p>
+        </div>
+
+        <div class="melon-card p-4">
+          <div class="flex items-center gap-2 font-mono text-xs text-[#ffb3b3] font-bold mb-2">
+            <i data-lucide="film" class="w-3.5 h-3.5"></i>
+            <span>VISUAL & MOTION</span>
+          </div>
+          <p class="text-xs text-zinc-300 leading-relaxed font-mono">
+            Post-Production, Motion Graphics, Kinetic Typography, Sound Design, Color Grading, Short-Form & Long-Form Pacing.
+          </p>
+        </div>
+
+        <div class="melon-card p-4">
+          <div class="flex items-center gap-2 font-mono text-xs text-[#ff3b3b] font-bold mb-2">
+            <i data-lucide="trending-up" class="w-3.5 h-3.5"></i>
+            <span>CONTENT & SOCIAL</span>
+          </div>
+          <p class="text-xs text-zinc-300 leading-relaxed font-mono">
+            Trend & Topic Research, Script & Hook Ideation, Social Media Coordination (YouTube, Instagram), Thumbnail Design.
+          </p>
+        </div>
+
+        <div class="melon-card p-4">
+          <div class="flex items-center gap-2 font-mono text-xs text-[#ffb3b3] font-bold mb-2">
+            <i data-lucide="layers" class="w-3.5 h-3.5"></i>
+            <span>PRODUCTION & WORKFLOW</span>
+          </div>
+          <p class="text-xs text-zinc-300 leading-relaxed font-mono">
+            BTS Shoot Assistance, Creative Brainstorming, Asset & Footage Organization, Fast-Turnaround Delivery.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 04: EDUCATION ==================== -->
+    <section>
+      <div class="flex items-center justify-between border-b border-[#f6efed]/10 pb-2 mb-6">
+        <h2 class="font-display text-lg font-bold text-white flex items-center gap-2">
+          <span class="text-[#ff3b3b] font-mono text-sm">// 04</span>
+          <span>EDUCATION</span>
+        </h2>
+        <span class="font-mono text-[10px] text-zinc-500">ACADEMICS</span>
+      </div>
+
+      <div class="space-y-3">
+        
+        <div class="melon-card p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+          <div>
+            <div class="text-xs sm:text-sm font-bold text-white font-display">Undergraduate Program (B.Com)</div>
+            <div class="text-xs text-zinc-400">School of Open Learning, University of Delhi</div>
+          </div>
+          <span class="text-xs font-mono text-[#ffb3b3] font-semibold">2026 – Present</span>
+        </div>
+
+        <div class="melon-card p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+          <div>
+            <div class="text-xs sm:text-sm font-bold text-white font-display">Senior Secondary (Class XII — CBSE, Commerce)</div>
+            <div class="text-xs text-zinc-400">Sarvodaya Boys S.S.S., Matiala, New Delhi</div>
+          </div>
+          <span class="text-xs font-mono text-zinc-400">2026</span>
+        </div>
+
+        <div class="melon-card p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+          <div>
+            <div class="text-xs sm:text-sm font-bold text-white font-display">Secondary School (Class X — CBSE)</div>
+            <div class="text-xs text-zinc-400">Sarvodaya Boys S.S.S., Matiala, New Delhi</div>
+          </div>
+          <span class="text-xs font-mono text-zinc-400">2024</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Document Footer -->
+    <footer class="mt-12 pt-6 border-t border-[#f6efed]/10 flex flex-col sm:flex-row items-center justify-between text-[11px] font-mono text-zinc-500 gap-2">
+      <div>ANSHURAJ SAH // CURRICULUM VITAE</div>
+      <div>MELON.STUDIO DESIGN SYSTEM • DELHI, INDIA</div>
+    </footer>
+
+  </main>
+
+  <!-- Toast for copying markdown -->
+  <div id="copy-toast" class="fixed bottom-6 right-6 z-50 bg-[#ff3b3b] text-white px-4 py-2 rounded-xl font-mono text-xs font-bold shadow-2xl flex items-center gap-2 opacity-0 translate-y-2 transition-all duration-300 pointer-events-none">
+    <i data-lucide="check" class="w-4 h-4"></i>
+    <span>Resume markdown copied to clipboard!</span>
+  </div>
+
+  <script>
+    lucide.createIcons();
+
+    // Copy clean ATS markdown text to clipboard
+    const copyBtn = document.getElementById('copy-markdown-btn');
+    if (copyBtn) {
+      copyBtn.addEventListener('click', () => {
+        const markdown = `# Anshuraj Sah
+Creative Intern — Content, Social Media & Production
+Uttam Nagar, West Delhi — 110059 | +91 8448343896 | anshurajkumarsah@gmail.com
+
+## Executive Summary
+Creative strategist, AI-native producer, and digital media coordinator with hands-on experience in project production, motion design, and social media storytelling. Skilled at leveraging generative AI workflows, researching internet trends, scripting engaging hooks, and coordinating fast-paced production—ready to support BTS shoots, creative brainstorming, and multi-platform workflows for Sarthak Goswami's team.
+
+## Creative & Production Experience
+- Founder & Creative Producer | Titanix Media (Digital Media Agency)
+  * Manage end-to-end digital media production for brands, overseeing ideation, AI-assisted scripting, motion design, and final social media delivery.
+  * Develop dynamic visual graphics, kinetic typography, and narrative pacing tailored to retain audience attention across YouTube and short-form vertical feeds.
+  * Coordinate multi-project deadlines in fast-paced environments, translating raw assets and creative briefs into polished, platform-ready deliverables.
+
+- Digital Producer & Channel Manager | YouTube Channel (Independent Project)
+  * Conceptualize, script, record, and produce original long-form and short-form media, managing the complete production pipeline independently.
+  * Conduct AI-accelerated trend and topic research to identify high-performing formats, viral hooks, and audience engagement patterns.
+  * Craft custom thumbnails, visual storytelling elements, and audio pacing to improve click-through rates and viewer retention.
+
+- Social Media Manager & Curator | Gaming & Pop-Culture Community (Instagram)
+  * Built and managed a niche gaming community page, coordinating fast-turnaround Reels, memes, and trend-driven posts tailored to audience culture.
+  * Monitored platform analytics, audio trends, and creator formats to optimize posting schedules and maximize organic reach.
+
+## Selected Projects & Capabilities
+- Short-Form & Explainer Production Suite | Motion Graphics & Storytelling
+  * Produced high-retention Reels and explainer pieces combining visual layering, custom motion callouts, sound design, and clean narrative pacing.
+  * Experienced in turning complex or informational topics into accessible, entertaining visual stories suited for news-and-culture audiences.
+
+## Core Skills & Tools
+- AI & Creative Tech: Generative AI Workflows, Prompt Engineering, AI-Assisted Research & Scripting, AI Visual & Audio Generation, Workflow Automation
+- Visual & Motion: Post-Production, Motion Graphics, Kinetic Typography, Sound Design, Color Grading, Short-Form & Long-Form Pacing
+- Content & Social: Trend & Topic Research, Script & Hook Ideation, Social Media Coordination (YouTube, Instagram), Thumbnail Design
+- Production & Workflow: BTS Shoot Assistance, Creative Brainstorming, Asset & Footage Organization, Fast-Turnaround Delivery
+
+## Education
+- Undergraduate Program (B.Com) | School of Open Learning, University of Delhi (2026 – Present)
+- Senior Secondary (Class XII — CBSE, Commerce) | Sarvodaya Boys S.S.S., Matiala, New Delhi (2026)
+- Secondary School (Class X — CBSE) | Sarvodaya Boys S.S.S., Matiala, New Delhi (2024)
+`;
+        navigator.clipboard.writeText(markdown).then(() => {
+          const toast = document.getElementById('copy-toast');
+          if (toast) {
+            toast.classList.remove('opacity-0', 'translate-y-2');
+            setTimeout(() => {
+              toast.classList.add('opacity-0', 'translate-y-2');
+            }, 2000);
+          }
+        });
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,339 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=swap');
+
+:root {
+  /* Official melon.studio color tokens */
+  --black: #0f0000;
+  --bg-primary: #0a0303;
+  --bg-secondary: #120505;
+  --bg-card: rgba(22, 7, 7, 0.72);
+  --bg-card-hover: rgba(32, 10, 10, 0.88);
+  
+  --melon-red: #ff3b3b;
+  --melon-red-hover: #ff5454;
+  --melon-coral: #e5524a;
+  --liquid-pink: #ffb3b3;
+  --cyan-accent: #45e0ea;
+  
+  --accent-glow: rgba(255, 59, 59, 0.28);
+  --accent-dim: rgba(255, 59, 59, 0.12);
+  
+  --text-main: #f6efed;
+  --text-muted: rgba(246, 239, 237, 0.65);
+  --text-dim: rgba(246, 239, 237, 0.38);
+  
+  --border-subtle: rgba(246, 239, 237, 0.09);
+  --border-bright: rgba(246, 239, 237, 0.20);
+  --border-melon: rgba(255, 59, 59, 0.45);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--melon-red);
+  color: #ffffff;
+}
+
+body {
+  background-color: var(--bg-primary);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Custom cursor */
+.cursor-dot,
+.cursor-ring {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s ease;
+}
+
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--melon-red);
+  box-shadow: 0 0 12px var(--melon-red);
+}
+
+.cursor-ring {
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(255, 59, 59, 0.45);
+  transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.cursor-hover .cursor-ring {
+  width: 58px;
+  height: 58px;
+  background: rgba(255, 59, 59, 0.14);
+  border-color: var(--melon-red);
+}
+
+@media (pointer: coarse) {
+  .cursor-dot, .cursor-ring {
+    display: none !important;
+  }
+}
+
+/* Background grid and ambient glow */
+.bg-grid-pattern {
+  background-size: 44px 44px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+}
+
+.glow-gradient-1 {
+  position: absolute;
+  top: 5%;
+  left: 15%;
+  width: 560px;
+  height: 560px;
+  background: radial-gradient(circle, rgba(255, 59, 59, 0.07) 0%, transparent 70%);
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.glow-gradient-2 {
+  position: absolute;
+  top: 45%;
+  right: 10%;
+  width: 650px;
+  height: 650px;
+  background: radial-gradient(circle, rgba(229, 82, 74, 0.06) 0%, transparent 70%);
+  filter: blur(110px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Typography Utility */
+.font-display {
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: -0.03em;
+}
+
+.font-mono-code {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Glassmorphism Cards */
+.melon-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.melon-card:hover {
+  border-color: rgba(255, 59, 59, 0.38);
+  background: var(--bg-card-hover);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.75), 0 0 24px -6px rgba(255, 59, 59, 0.22);
+}
+
+.melon-card-border-glow::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(255, 59, 59, 0.35), transparent 60%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Photo Portrait Card */
+.profile-photo-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 59, 59, 0.3);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6), 0 0 25px rgba(255, 59, 59, 0.15);
+  background: #140505;
+}
+
+.profile-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
+  filter: contrast(1.05) saturate(0.95);
+}
+
+.profile-photo-container:hover .profile-photo-img {
+  transform: scale(1.04);
+  filter: contrast(1.1) saturate(1.1);
+}
+
+/* Ribbon Marquee */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 32s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Melon Tag */
+.badge-melon {
+  background: var(--accent-dim);
+  color: var(--liquid-pink);
+  border: 1px solid rgba(255, 59, 59, 0.32);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  letter-spacing: 0.04em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+/* Audio bars visualizer */
+.audio-bar {
+  width: 2.5px;
+  height: 12px;
+  background-color: var(--melon-red);
+  border-radius: 1px;
+  animation: pulse-audio 1.2s ease-in-out infinite alternate;
+}
+
+.audio-bar:nth-child(2) { animation-delay: 0.2s; height: 16px; }
+.audio-bar:nth-child(3) { animation-delay: 0.4s; height: 10px; }
+.audio-bar:nth-child(4) { animation-delay: 0.1s; height: 18px; }
+
+@keyframes pulse-audio {
+  0% { transform: scaleY(0.3); opacity: 0.5; }
+  100% { transform: scaleY(1); opacity: 1; }
+}
+
+.audio-paused .audio-bar {
+  animation: none;
+  transform: scaleY(0.2);
+  opacity: 0.3;
+}
+
+/* Button styles */
+.btn-melon-primary {
+  background: var(--melon-red);
+  color: #ffffff;
+  font-weight: 700;
+  padding: 0.75rem 1.6rem;
+  border-radius: 9999px;
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: -0.01em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 18px rgba(255, 59, 59, 0.32);
+  border: 1px solid var(--melon-red);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-melon-primary:hover {
+  background: var(--melon-red-hover);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 26px rgba(255, 59, 59, 0.5);
+}
+
+.btn-melon-secondary {
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-main);
+  border: 1px solid var(--border-subtle);
+  font-weight: 600;
+  padding: 0.75rem 1.6rem;
+  border-radius: 9999px;
+  font-family: 'Space Grotesk', sans-serif;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.25s ease;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-melon-secondary:hover {
+  background: rgba(255, 59, 59, 0.08);
+  border-color: rgba(255, 59, 59, 0.35);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Interactive Phone Mockup */
+.phone-mockup-frame {
+  width: 320px;
+  height: 560px;
+  background: #090202;
+  border: 6px solid #200808;
+  border-radius: 44px;
+  box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.95), 0 0 35px rgba(255, 59, 59, 0.16);
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.phone-island {
+  width: 90px;
+  height: 18px;
+  background: #000;
+  border-radius: 12px;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 30;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0303;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #230b0b;
+  border-radius: 4px;
+  border: 2px solid #0a0303;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3a1212;
+}

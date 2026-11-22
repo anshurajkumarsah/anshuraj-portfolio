@@ -1,0 +1,17 @@
+{
+  "name": "Anshuraj Sah — Creative Producer",
+  "short_name": "Anshuraj",
+  "description": "Creative Intern, AI-native producer, and founder of Titanix Media.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0a0303",
+  "theme_color": "#ff3b3b",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
